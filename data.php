@@ -381,9 +381,9 @@ $result = array_count_values ($pr); ?>
 <table>
 <?php foreach ($result as $key => $value) : ?>
 <tr>
-<td><?php echo $key; ?></td>
-<td><?php echo $value; ?></td>
-<td><?php echo "предложения <br/>"; ?></td>
+<td><?php echo  htmlspecialchars( $key, ENT_QUOTES) . '<br/>' ; ?></td>
+<td><?php echo  htmlspecialchars( $value, ENT_QUOTES) . '<br/>' ; ?></td>
+<td><?php echo  htmlspecialchars("предложения", ENT_QUOTES) . '<br/>' ; ?></td>
 </tr>
 <?php endforeach; ?>
 </table>
@@ -398,17 +398,18 @@ function myCmp($a, $b)
 }
 
 usort($data, myCmp);
+
 ?>
 
 <table border="1">
 <?php foreach($data as $val) : ?>
 <tr>
-<td align="center"><?php echo $val['vendor']; ?></td>
-<td align="center"><?php echo $val['name']; ?></td>
-<td align="center"><?php echo $val['description']; ?></td>
+<td align="center"><?php echo  htmlspecialchars($val['vendor'], ENT_QUOTES);  ?></td>
+<td align="center"><?php echo  htmlspecialchars($val['name'], ENT_QUOTES);  ?></td>
+<td align="center"><?php echo  htmlspecialchars($val['description'], ENT_QUOTES); ?></td>
 <td align="center"><img src = "<?php echo $val['mainPhoto']['url']; ?>" height = "<?php echo $val['mainPhoto']['height']; ?>" width="<?php echo $val['mainPhoto']['width']; ?>" align = "middle"></td>
-<td align="center"><?php echo $val['prices']['amount']; ?></td>
-<td align="center"><?php echo $val['prices']['curCode']; ?></td>
+<td align="center"><?php echo  htmlspecialchars(number_format ($val['prices']['amount'] , 0 , '.' , ' ' ), ENT_QUOTES); ?></td>
+<td align="center"><?php echo  htmlspecialchars($val['prices']['curCode'], ENT_QUOTES); ?></td>
 </tr>
 <?php endforeach; ?>
 </table>
