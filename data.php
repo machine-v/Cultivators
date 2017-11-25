@@ -407,7 +407,7 @@ usort($data, myCmp);
 <td align="center"><?php echo  htmlspecialchars($val['vendor'], ENT_QUOTES);  ?></td>
 <td align="center"><?php echo  htmlspecialchars($val['name'], ENT_QUOTES);  ?></td>
 <td align="center"><?php echo  htmlspecialchars($val['description'], ENT_QUOTES); ?></td>
-<td align="center"><img src = "<?php echo $val['mainPhoto']['url']; ?>" height = "<?php echo $val['mainPhoto']['height']; ?>" width="<?php echo $val['mainPhoto']['width']; ?>" align = "middle"></td>
+<td align="center"><img src = "<?php echo htmlspecialchars($val['mainPhoto']['url'], ENT_QUOTES);?>" height = "<?php echo htmlspecialchars( $val['mainPhoto']['height'], ENT_QUOTES) ; ?>" width="<?php echo htmlspecialchars( $val['mainPhoto']['width'], ENT_QUOTES) ; ?>" align = "middle"></td>
 <td align="center"><?php echo  htmlspecialchars(number_format ($val['prices']['amount'] , 0 , '.' , ' ' ), ENT_QUOTES); ?></td>
 <td align="center"><?php echo  htmlspecialchars($val['prices']['curCode'], ENT_QUOTES); ?></td>
 </tr>
