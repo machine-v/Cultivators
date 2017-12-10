@@ -397,7 +397,7 @@ function myCmp($a, $b)
    return strcasecmp($a['prices']['amount'], $b['prices']['amount']) > 0 ? 1 : -1;
 }
 
-usort($data, myCmp);
+usort($data, 'myCmp');
 
 ?>
 
